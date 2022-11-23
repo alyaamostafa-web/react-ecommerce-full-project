@@ -20,8 +20,10 @@ const ViewSearchProductsHook = () => {
     getProduct();
   }, []);
 
-  const allProducts = useSelector((state) => state.allproducts.allProducts);
-  console.log(allProducts);
+  const allProducts = useSelector(
+    (state) => state.allproducts.allSearchProducts
+  );
+  // console.log(allProducts);
 
   let items = [];
   let pagination = [];

@@ -1,13 +1,16 @@
 import React from "react";
 import { Col, Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import DeleteCategoryHook from "./../../hook/category/delete-category-hook";
+import deleteicon from "../../images/delete.png";
+import editicon from "../../images/edit.png";
 
-const AdminCategoryCard = ({ img, title, id }) => {
+import DeleteBrandHook from "./../../hook/brand/delete-brand-hook";
+
+const AdminBrandCard = ({ index, img, title, id }) => {
   const [handelDelete, showDelete, handleClose, handleShow] =
-    DeleteCategoryHook(id);
+    DeleteBrandHook(id);
   return (
-    <Col xs="6" sm="6" md="4" lg="2" className="my-4">
+    <>
       <Modal show={showDelete} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>
@@ -27,26 +30,53 @@ const AdminCategoryCard = ({ img, title, id }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <div class="d-flex justify-content-center px-2 row">
+      <tr>
+        {/* <th>{index + 1}</th> */}
+        <th>{title}</th>
+        <th>
+          {" "}
+          <img alt="zcv" src={img} width={"50px"} height={"50px"} />
+        </th>
+        <th>
+          <img
+            src={deleteicon}
+            onClick={handleShow}
+            width="20px"
+            height="20px"
+            style={{ cursor: "pointer" }}
+            alt="delete"
+          />
+
+          <img
+            src={editicon}
+            // onClick={handleShowEdit}
+            width="20px"
+            height="20px"
+            style={{ cursor: "pointer", marginRight: "10px" }}
+            alt="update"
+          />
+        </th>
+      </tr>
+      {/* <div class="d-flex justify-content-center px-2 row">
         <div class=" d-flex justify-content-between col">
           <div class=" item-delete-edit" onClick={handleShow}>
             ازاله
           </div>
-          {/* <a
+          <a
             href="/admin/editproduct/637d2e5b3e15fd3a78aaccee"
-            style="text-decoration: none;"> */}
+            style="text-decoration: none;">
           <div class=" item-delete-edit">تعديل</div>
-          {/* </a> */}
+          </a>
         </div>
-      </div>
-      <div className="categoty-card-admin mb-3 ">
-        {/* <div className="categoty-card "></div> */}
+      </div> */}
+      {/* <div className="categoty-card-admin mb-3 ">
+        <div className="categoty-card "></div>
 
         <img alt="zcv" src={img} className="img-fluid" />
         <p className="categoty-card-text my-2">{title}</p>
-      </div>
-    </Col>
+      </div> */}
+    </>
   );
 };
 
-export default AdminCategoryCard;
+export default AdminBrandCard;

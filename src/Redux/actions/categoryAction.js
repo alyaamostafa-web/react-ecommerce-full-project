@@ -3,9 +3,11 @@ import {
   CREATE_CATEGORY,
   GET_ALL_CATEGORY,
   GET_ONE_CATEGORY,
+  DELETE_CATEGORY,
   GET_ERROR,
 } from "../type";
 import { useGetData } from "./../../hooks/useGetData";
+import useDeleteData from "./../../hooks/useDeleteData";
 
 //get All Category
 export const getAllCategory = (limit) => async (dispatch) => {
@@ -72,6 +74,22 @@ export const createCategory = (formData) => async (dispatch) => {
     dispatch({
       type: GET_ERROR,
       payload: "Error " + e,
+    });
+  }
+};
+//delete Category with id
+export const deleteCategory = (id) => async (dispatch) => {
+  try {
+    const response = await useDeleteData(`/api/v1/categories/${id}`);
+
+    dispatch({
+      type: DELETE_CATEGORY,
+      payload: response,
+    });
+  } catch (e) {
+    dispatch({
+      type: DELETE_CATEGORY,
+      payload: e.response,
     });
   }
 };

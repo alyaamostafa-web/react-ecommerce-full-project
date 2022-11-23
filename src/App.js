@@ -11,6 +11,8 @@ import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
 import CartPage from "./Page/Cart/CartPage";
 import ChoosePayMethoudPage from "./Page/Checkout/ChoosePayMethoudPage";
 import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
+import AdminAllCategoryPage from "./Page/Admin/AdminAllCategoryPage";
+import AdminAllBrandsPage from "./Page/Admin/AdminAllBrandsPage";
 import AdminAllOrdersPage from "./Page/Admin/AdminAllOrdersPage";
 import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
 import AdminAddBrandPage from "./Page/Admin/AdminAddBrandPage";
@@ -72,6 +74,11 @@ const App = () => {
               path="/admin/allproducts"
               element={<AdminAllProductsPage />}
             />
+            <Route
+              path="/admin/allcategory"
+              element={<AdminAllCategoryPage />}
+            />
+            <Route path="/admin/allbrands" element={<AdminAllBrandsPage />} />
             <Route
               path="/admin/editproduct/:id"
               element={<AdminEditProductsPage />}

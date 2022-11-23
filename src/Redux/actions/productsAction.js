@@ -10,6 +10,7 @@ import {
   UPDATE_PRODUCTS,
   GET_ALL_PRODUCTS_CATEGORY,
   GET_ALL_PRODUCTS_BRAND,
+  GET_ALL_SEARCH_PRODUCTS,
 } from "../type";
 import { useGetData } from "./../../hooks/useGetData";
 import useDeleteData from "./../../hooks/useDeleteData";
@@ -39,6 +40,7 @@ export const createProduct = (formatData) => async (dispatch) => {
 export const getAllProducts = (limit) => async (dispatch) => {
   try {
     const response = await useGetData(`/api/v1/products?limit=${limit}`);
+    // console.log(response);
 
     dispatch({
       type: GET_ALL_PRODUCTS,
@@ -76,13 +78,12 @@ export const getAllProductsSearch = (queryString) => async (dispatch) => {
     const response = await useGetData(`/api/v1/products?${queryString}`);
     // console.log(response);
     dispatch({
-      type: GET_ALL_PRODUCTS,
+      type: GET_ALL_SEARCH_PRODUCTS,
       payload: response,
-      loading: true,
     });
   } catch (e) {
     dispatch({
-      type: GET_ALL_PRODUCTS,
+      type: GET_ALL_SEARCH_PRODUCTS,
       payload: e.response,
     });
   }

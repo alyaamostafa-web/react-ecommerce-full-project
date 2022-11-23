@@ -51,6 +51,7 @@ const AddCategoryHook = () => {
       setTimeout(() => setIsPress(false), 1000);
       if (res.status === 201) {
         notify("تمت عملية الاضافة بنجاح", "success");
+        setTimeout(() => window.location.reload(false), 1000);
       } else {
         notify("هناك مشكله فى عملية الاضافة", "error");
       }

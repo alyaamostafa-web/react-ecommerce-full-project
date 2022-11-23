@@ -17,11 +17,10 @@ const ViewProductAdminHook = () => {
     await dispatch(getAllProductsPage(page, 6));
   };
 
-  //   const loading = useSelector((state) => state.allBrand.loading);
-
   let items = [];
   let pagination = [];
   const allProducts = useSelector((state) => state.allproducts.allProducts);
+  console.log(useSelector((state) => state.allproducts.allProducts));
   try {
     if (allProducts.data) {
       items = allProducts.data;

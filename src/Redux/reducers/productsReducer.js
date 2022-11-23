@@ -8,11 +8,13 @@ import {
   GET_ERROR,
   GET_ALL_PRODUCTS_CATEGORY,
   GET_ALL_PRODUCTS_BRAND,
+  GET_ALL_SEARCH_PRODUCTS,
 } from "../type";
 
 const inital = {
   products: [],
   allProducts: [],
+  allSearchProducts: [],
   oneProduct: [],
   productLike: [],
   deleteProduct: [],
@@ -34,6 +36,12 @@ const productsReducer = (state = inital, action) => {
       return {
         ...state,
         allProducts: action.payload,
+        loading: false,
+      };
+    case GET_ALL_SEARCH_PRODUCTS:
+      return {
+        ...state,
+        allSearchProducts: action.payload,
         loading: false,
       };
 

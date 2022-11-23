@@ -15,6 +15,16 @@ const AdminSideBar = () => {
             اداره المنتجات
           </div>
         </Link>
+        <Link to="/admin/allcategory" style={{ textDecoration: "none" }}>
+          <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+            اداره التصنيفات
+          </div>
+        </Link>
+        <Link to="/admin/allbrands" style={{ textDecoration: "none" }}>
+          <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+            اداره الماركات
+          </div>
+        </Link>
         <Link to="/admin/addbrand" style={{ textDecoration: "none" }}>
           <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
             اضف ماركه

@@ -150,7 +150,7 @@ const AdminAddProductsHook = () => {
     formData.append("quantity", qty);
     formData.append("price", priceBefore);
 
-    formData.append("priceAfterDiscount", priceAftr);
+    // formData.append("priceAfterDiscount", priceAftr);
 
     formData.append("category", CatID);
 

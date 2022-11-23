@@ -39,14 +39,15 @@ const CartItem = ({ item }) => {
         width="160px"
         height="197px"
         // src={item.product ? item.product.imageCover : mobile}
-        src={item.product.imageCover}
+        src={item.product ? item.product.imageCover : null}
         alt=""
       />
       <div className="w-100">
         <Row className="justify-content-between">
           <Col sm="12" className=" d-flex flex-row justify-content-between">
             <div className="d-inline pt-2 cat-text">
-              {item.product.category.name || ""}
+              {/* {item.product.category.name || ""} */}
+              {item.product ? item.product.category.name : ""}
             </div>
             <div
               className="d-flex pt-2 "
@@ -60,10 +61,10 @@ const CartItem = ({ item }) => {
         <Row className="justify-content-center mt-2">
           <Col sm="12" className=" d-flex flex-row justify-content-start">
             <div className="d-inline pt-2 cat-title">
-              {item.product.title || ""}
+              {item.product ? item.product.title : ""}
             </div>
             <div className="d-inline pt-2 cat-rate me-2">
-              {item.product.ratingsAverage || 0}
+              {item.product ? item.product.ratingsAverage : 0}
             </div>
           </Col>
         </Row>
@@ -71,7 +72,7 @@ const CartItem = ({ item }) => {
           <Col sm="12" className="mt-1">
             <div className="cat-text d-inline">الماركة :</div>
             <div className="barnd-text d-inline mx-1">
-              {item.product.brand.name || ""}{" "}
+              {item.product ? item.product.brand.name : ""}{" "}
             </div>
           </Col>
         </Row>

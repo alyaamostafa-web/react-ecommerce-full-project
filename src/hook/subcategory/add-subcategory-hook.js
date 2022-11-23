@@ -24,7 +24,7 @@ const AddSubCategoryHook = () => {
 
   //on change dropdown menu
   const handelChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setID(e.target.value);
   };
 
@@ -60,11 +60,10 @@ const AddSubCategoryHook = () => {
   };
   useEffect(() => {
     if (loading === false) {
-      setName("");
-      setID("0");
       if (subcategory) console.log(subcategory);
       if (subcategory.status === 201) {
         notify("تمت الاضافة بنجاح", "success");
+        setTimeout(() => window.location.reload(false), 1000);
       } else if (
         subcategory === "Error AxiosError: Request failed with status code 400"
       ) {
@@ -72,7 +71,8 @@ const AddSubCategoryHook = () => {
       } else {
         notify("هناك مشكله فى عملية الاضافة", "warn");
       }
-
+      setName("");
+      setID("0");
       setLoading(true);
     }
   }, [loading]);

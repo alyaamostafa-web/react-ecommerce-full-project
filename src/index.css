@@ -691,3 +691,9 @@ body {
   font-size:12px !important;
   font-weight:bold !important;
 }  
+table thead tr{
+  background-color: #f7f8f9 !important;
+}
+.table>:not(:first-child){
+  border-top: none !important;
+}

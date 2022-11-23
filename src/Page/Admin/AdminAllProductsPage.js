@@ -6,7 +6,7 @@ import Pagination from "../../Components/Uitily/Pagination";
 import ViewProductAdminHook from "./../../hook/admin/view-product-admin-hook";
 const AdminAllProductsPage = () => {
   const [items, pagination, onPress] = ViewProductAdminHook();
-  //   if (items) console.log(items);
+  // if (items) console.log(items);
   if (pagination) var pageCount = pagination;
   else pageCount = 0;
 
